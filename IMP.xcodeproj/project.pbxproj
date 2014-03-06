@@ -10,7 +10,6 @@
 		62F8DD9718C8512B00A5DFB8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62F8DD9618C8512B00A5DFB8 /* Cocoa.framework */; };
 		62F8DDA118C8512B00A5DFB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62F8DD9F18C8512B00A5DFB8 /* InfoPlist.strings */; };
 		62F8DDAA18C8585200A5DFB8 /* MsgProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 62F8DDA918C8585200A5DFB8 /* MsgProcessor.m */; };
-		62F8DDAF18C85A9300A5DFB8 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 62F8DDAD18C85A9300A5DFB8 /* README */; };
 		62F8DDB018C85A9300A5DFB8 /* run.sh in Resources */ = {isa = PBXBuildFile; fileRef = 62F8DDAE18C85A9300A5DFB8 /* run.sh */; };
 		62F8DDB218C85AB500A5DFB8 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62F8DDB118C85AB500A5DFB8 /* .gitignore */; };
 /* End PBXBuildFile section */
@@ -26,7 +25,6 @@
 		62F8DDA218C8512B00A5DFB8 /* IMP-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IMP-Prefix.pch"; sourceTree = "<group>"; };
 		62F8DDA818C8585200A5DFB8 /* MsgProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgProcessor.h; sourceTree = "<group>"; };
 		62F8DDA918C8585200A5DFB8 /* MsgProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgProcessor.m; sourceTree = "<group>"; };
-		62F8DDAD18C85A9300A5DFB8 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		62F8DDAE18C85A9300A5DFB8 /* run.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run.sh; sourceTree = "<group>"; };
 		62F8DDB118C85AB500A5DFB8 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				62F8DDB118C85AB500A5DFB8 /* .gitignore */,
-				62F8DDAD18C85A9300A5DFB8 /* README */,
 				62F8DDAE18C85A9300A5DFB8 /* run.sh */,
 				62F8DD9C18C8512B00A5DFB8 /* IMP */,
 				62F8DD9518C8512B00A5DFB8 /* Frameworks */,
@@ -155,7 +152,6 @@
 			files = (
 				62F8DDB218C85AB500A5DFB8 /* .gitignore in Resources */,
 				62F8DDB018C85A9300A5DFB8 /* run.sh in Resources */,
-				62F8DDAF18C85A9300A5DFB8 /* README in Resources */,
 				62F8DDA118C8512B00A5DFB8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +302,7 @@
 				62F8DDA718C8512B00A5DFB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
