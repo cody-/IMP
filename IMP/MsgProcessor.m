@@ -94,7 +94,12 @@ NSString* readPipe(NSPipe* pipe) {
     NSMutableArray* scripts = [[NSMutableArray alloc] init];
     NSDirectoryEnumerator* dirEnum = [[NSFileManager defaultManager] enumeratorAtPath:dir];
     for(NSString* file in dirEnum) {
-        [scripts addObject:file];
+        NSString* script = [NSString stringWithFormat:@"%@/%@", scriptDir_, file];
+        if([[NSFileManager defaultManager] isExecutableFileAtPath:script]) {
+            [scripts addObject:file];
+        } else {
+            NSLog(@"IMP: %@ not executable - ignore", file);
+        }
     }
 
     return scripts;
@@ -108,17 +113,17 @@ NSString* readPipe(NSPipe* pipe) {
 
     // watch the file descriptor for writes
     dispatchSource_ = dispatch_source_create(DISPATCH_SOURCE_TYPE_VNODE, fd, DISPATCH_VNODE_WRITE, queue);
-     
+
     // call the passed block if the source is modified
     dispatch_source_set_event_handler(dispatchSource_, ^{
         scripts_ = [self loadScriptsFrom:scriptDir_];
     });
-     
+
     // close the file descriptor when the dispatch source is cancelled
     dispatch_source_set_cancel_handler(dispatchSource_, ^{
         close(fd);
     });
-     
+
     // at this point the dispatch source is paused, so start watching
     dispatch_resume(dispatchSource_);
 }
