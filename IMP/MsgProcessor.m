@@ -67,14 +67,19 @@ NSString* readPipe(NSPipe* pipe) {
 }
 
 ///
+NSString* Quote(NSString* str) {
+    return [NSString stringWithFormat:@"\"%@\"", [str stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]];
+}
+
+///
 - (NSString*)runScript:(NSString*)script withMsg:(NSString*)msg
 {
     NSPipe* outPipe = [NSPipe pipe];
     NSPipe* errPipe = [NSPipe pipe];
 
     NSTask* task = [[NSTask alloc] init];
-    [task setLaunchPath:script];
-    [task setArguments:@[msg]];
+    [task setLaunchPath:@"/bin/bash"];
+    [task setArguments:@[@"--login", @"-c", [NSString stringWithFormat: @"%@ %@", Quote(script), Quote(msg)]]];
     [task setStandardOutput:outPipe];
     [task setStandardError:errPipe];
     [task launch];
